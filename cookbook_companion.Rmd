@@ -46,7 +46,8 @@ ind_fish<-fread("C:\\Users\\amosje\\Everything R\\r_projects\\cookbook_companion
 
 ```
 
-##Preface
+## Preface
+
 Fisheries management in Ontario involves the creation of FMZ background reports which describe what is known about the status and trends of various fish species, and their habitat, within an FMZ and are used to guide conversations with FMZ advisory councils. In an effort to develop consistant approaches for data analysis and presentation of results, a 'cookbook' was developed (circa 2016) by a multi-divisional team of qualified fisheries staff.Although the document does provide guidance for what types of information to include (indicators), it does not provide details about appropriate analytical procedures or data use considerations. Here, I review some of the  recomended indicators and provide guidance on data use considerations (primarily BsM data) and options for analytical procedures. I have focused on the biological description chapter (Chapter 2 in cookbook), and the structure of this document is as follows.
 
 1. I first provide a quick summary of the BsM program design and characteristics of the North American netting standard, with some discussion of implications each has for how the data can/should be used for fisheries management.
@@ -55,11 +56,11 @@ Fisheries management in Ontario involves the creation of FMZ background reports 
 
 3. Finally, I present a number of case specific considerations, and alternatives to the standard approaches.
 
-###BsM design
+### BsM design
 
-####The Trend vs State lake selection process.
+#### The Trend vs State lake selection process.
 
-The lake selection process for BsM is a stratified random design where lakes are randomly selected in proportion to the total number of lakes in each FMZ. The original design of the program, (proposed changes for cycle 3 discussed later), has lakes randomly selected within each FMZ, and identified as either a trend lake or a state lake. A trend lake is sampled once in each 5 year monitoring cycle, while state lakes are sampled once in a 5-year cycle and may or may not be sampled again in future sampling cycles (ie. a new state sample is selected each cycle). Monitoring trend lakes is best for detecting changes in fish populations and aquatic ecosystems over time, while monitoring state lakes is best for describing the overall status of fish populations at a point in time (lester ref). Including both trend and state lakes within the monitoring program is important for providing a balance between detecting changes quickly and accurately describing the status of fish populations and aquatic resources.
+The lake selection process for BsM is a stratified random design where lakes are randomly selected in proportion to the total number of lakes in each FMZ. The original design of the program, (proposed changes for cycle 3 discussed later), has lakes randomly selected within each FMZ, and identified as either a trend lake or a state lake. A trend lake is sampled once in each 5 year monitoring cycle, while state lakes are sampled once in a 5-year cycle and may or may not be sampled again in future sampling cycles (ie. a new state sample is selected each cycle). Monitoring trend lakes is best for detecting changes in fish populations and aquatic ecosystems over time, while monitoring state lakes is best for describing the overall status of fish populations at a point in time (lester ref). Including both trend and state lakes within the monitoring program is important for providing a balance between detecting changes quickly and accurately describing the status of fish populations and aquatic resources. 
 
 The original program design was to sample 5% of the 34000 lakes between 20 - 250000 ha in Ontario. Within each FMZ, 10% of all known, Lake Trout and Walleye lakes between 20 and 250,000 hectares were selected as trend lakes, with a minimum of 10 lakes per FMZ selected for Lake Trout, and 20 lakes for Walleye. Only four FMZs (6, 7, 10 and 15) were found to have enough Brook trout lakes for sampling and a 10% sample was targeted. Following these rules, the total number of trend lakes proposed to be sampled was 823. The process for selecting trend lakes, which is intended to represent an unbiased sample of species (Walleye, Brook Trout, and Lake Trout) at the FMZ level, is conducted independently for each target species. Therefore, a lake may be selected to describe the status of multiple species. For example, in FMZ 11, sixteen lakes were selected as Walleye trend lakes and nine lakes were selected as Lake Trout trend lakes. Additionally, five lakes were selected for both Walleye and Lake Trout trend, thus a total of 30 trend lakes were randomly selected to be surveyed. For reporting purposes, 21 Walleye trend lakes are used in reporting on Walleye in the zone, and 14 Lake Trout trend lakes are used for reporting on Lake Trout in the zone. For all other species (eg. Northern pike, Whitefish), all lakes where the species were captured are used in analyses (ie. N $\leq$ 30.
 
@@ -69,10 +70,12 @@ The total number of lakes in the state component of the provincial program was t
 
 making use of the data from the first cycle of the program resulted in some modifications to the program moving forward...Bla bla, some lakes were dropped, the state component was resurected in a small way, and some target spp changes were made.
 
-#insert table of state and trend lakes by zone for CY01
+#insert table of state and trend lakes by zone for CY02
+
+#so what do we do when the selection conflicts (between CY1 & CY2)
 
 
-####Calculating zone-wide metrics
+#### Calculating zone-wide metrics
 
 An important component of using data from the BsM program in describing status and trends of various species is the application of the area vs equal weighting. All zone level measures presented for Walleye and Lake Trout should be based on species specific trend lakes, and therefore should be area-weighted based on zone specific lake size class proportions (see Table 1). This is done by first calculating a measure of interest (e.g. Mean length of Walleye) for each of the Walleye trend lakes, then rolling-up the individual lake measures to calculate the average of each lake size bin category, and then applying an area weighting based on area of all known Walleye lakes by size bin within the FMZ to arrive at an area weighted average mean length of Walleye for the FMZ. Area-weighted zone averages should only be calculated for Walleye, and Lake Trout, where we are confident in the size of the population of lakes containing those species in the zone. For all other species, including Brook trout, measures presented as a zone average are based on all lakes where the species was detected and are calculated using an equal weighting by lake size bin (each size bin contributes equally to the zone average).
 
@@ -86,7 +89,7 @@ kable(weights, format = "latex", booktabs=TRUE, longtable = TRUE, caption = past
 
 ```
 
-####The North American Gillnet and its retension characteristics
+#### The North American Gillnet and its retension characteristics
 
 The primary source of data for reporting on status and trends of sport fish from the BsM program is the catch from the North American (NA1) gillnet (also known as ‘large mesh’; Bonar et al. 2009). Additionally, it is sometimes appropriate to include data from the Ontario small mesh gear (ON2) described by Sandstrom et al. (2015), but these data are primarily intended to describe the structure of the small-fish community. The assortment of mesh sizes used in the NA1 net were chosen to survey primarily fish in the size range where the recreational fishery operates, and thus, cannot provide a description of the whole population (i.e. does poor job sampling very small fish). In addition, fish of different sizes are not equally vulnerable to the gear (e.g. smaller fish may only be caught in one or two panels of the smaller mesh, while larger fish may be caught in both the larger meshes as well as entangling in the smaller meshes).  Recent studies have described these differences, or retention selectivity characteristics, associated with the NA1 net for several species (Walker et al. 2013 and Smith et al. 2017). 
 
@@ -117,12 +120,12 @@ kable(recruit.table, format = "latex", booktabs = TRUE, longtable = TRUE, captio
 Bla bla bla, It is therefore important to be cognisant of when to apply the retention selectivity corrections and to maintain consistency among various measures of status.
 
 
-##Chapter 2 Biological Description 
+## Chapter 2 Biological Description 
 
-###Sub-section 2.5.1 Size
+### Sub-section 2.5.1 Size
 
 
-###Sub-section 2.5.2 Age & Mortality
+### Sub-section 2.5.2 Age & Mortality
 
 A healthy fishery is typically supported by many age classes, whereas populations made up of fewer age classes typically indicate a stressed population. Looking at the number of cohorts (age classes) or average age of that portion of the population recruited to the fishery typically gives an indication of the health of the population, where fewer cohorts and/or declining average age typically results from high levels of mortality for those older age classes.
 
